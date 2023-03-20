@@ -16,6 +16,7 @@ d3.json(url).then(function (data) {
 
   // Assign variable for test subject ID
   let sampleNames = data.names;
+
   // Display test subject ID
   console.log("Names:", sampleNames);
 
@@ -70,12 +71,18 @@ function optionChanged(sampleId) {
 function buildCharts(sampleValues) {
   d3.json(url).then(function (data) {
     var samples = data.samples;
+    var metaData = data.metadata;
     console.log("Extracted Samples:", data.samples);
-    
+    console.log("Extracted MetaData:", data.metadata);
+
     // Filter by ID
     let resultArray = samples.filter(sampleObj => sampleObj.id == sampleValues);
     let result = resultArray[0];
     console.log("Samples:", result);
+
+    let resultArray2 = metaData.filter(sampleObj => sampleObj.id == sampleValues);
+    let result2 = resultArray2[0];
+    console.log("MetaData:", result2);
 
     // Assign variables for the OTU IDs, OTU labels and sample_values
     let otu_ids = result.otu_ids;
@@ -138,6 +145,30 @@ function buildCharts(sampleValues) {
     // Plot bubble chart with bubbleData and bubbleLayout
     Plotly.newPlot("bubble", bubbleData, bubbleLayout);
 
+    let gaugeData = [
+      {
+        domain: { x: [0, 1], y: [0, 1] },
+        value: result2.wfreq,
+        title: { text: "Frequency" },
+        type: "indicator",
+        mode: "gauge+number",
+        gauge: {
+          axis: { range: [null, 9], tickwidth: 1, tickcolor: "darkblue" },
+          bar: { color: "darkblue" },
+          bgcolor: "white",
+          borderwidth: 2,
+          bordercolor: "gray",
+          steps: [
+            { range: [0, 2], color: "white" },
+            { range: [2, 4], color: "white" }
+          ],
+        }
+      }
+    ];
+
+    let gaugeLayout = { width: 600, height: 500, margin: { t: 0, b: 0 } };
+    Plotly.newPlot("gauge", gaugeData, gaugeLayout);
   })
 
 };
+
