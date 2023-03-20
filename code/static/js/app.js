@@ -28,7 +28,34 @@ d3.json(url).then(function (data) {
   };
 
     // Call the functions to display the selected test subject ID's demographic info and plots
-
+    buildMetadata(sampleNames[0]);
+    buildCharts(sampleNames[0]);
   });
 
-// Create a function to extract the metadata for the demographic info table
+  // Create a function to extract the metadata for the demographic info table
+function buildMetadata(sampleId) {
+  d3.json(url).then(function (data) {
+    var metaData = data.metadata;
+    // Filter by ID
+    let resultArray = metaData.filter(sampleObj => sampleObj.id == sampleId);
+    console.log("Extracted MetaData:", resultArray);
+    // Extract dictionary from array and assign to variable
+    let result = resultArray[0];
+    console.log("MetaData:", result)
+
+    // Assign variable for selected element - Demographic Info Table
+    let box = d3.select("#sample-metadata");
+
+    // Clear the data in the table
+    box.html("");
+
+    // Iterate through the result variable and append each key to demographic info table
+    for (key in result) {
+      box.append("h6").text(`${key.toUpperCase()}: ${result[key]}`);
+    };
+
+  })
+};
+
+// Create a function to plot the bar and bubble charts 
+function buildCharts(sampleValues)
