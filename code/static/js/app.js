@@ -14,4 +14,21 @@ d3.json(url).then(function (data) {
   // Assign variable for data
   x = data;
 
-});
+  // Assign variable for test subject ID
+  let sampleNames = data.names;
+  // Display test subject ID
+  console.log("Names:", sampleNames);
+
+  // Iterate through test subject ID and append to selected element for drop down menu
+  for (let i = 0; i < sampleNames.length; i++) {
+    selector
+      .append("option")
+      .text(sampleNames[i])
+      .property("value", sampleNames[i]);
+  };
+
+    // Call the functions to display the selected test subject ID's demographic info and plots
+
+  });
+
+// Create a function to extract the metadata for the demographic info table
