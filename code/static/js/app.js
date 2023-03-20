@@ -36,9 +36,11 @@ d3.json(url).then(function (data) {
 function buildMetadata(sampleId) {
   d3.json(url).then(function (data) {
     var metaData = data.metadata;
+
     // Filter by ID
     let resultArray = metaData.filter(sampleObj => sampleObj.id == sampleId);
     console.log("Extracted MetaData:", resultArray);
+
     // Extract dictionary from array and assign to variable
     let result = resultArray[0];
     console.log("MetaData:", result)
@@ -55,6 +57,13 @@ function buildMetadata(sampleId) {
     };
 
   })
+};
+
+// Create a function called optionChanged for when new value is selected/clicked in dropdown menu
+function optionChanged(sampleId) {
+  // Call the functions to display the new value's demographic info and plots
+  buildMetadata(sampleId);
+  buildCharts(sampleId);
 };
 
 // Create a function to plot the bar and bubble charts 
