@@ -154,7 +154,7 @@ function buildCharts(sampleValues) {
         type: "indicator",
         mode: "gauge+number",
         gauge: {
-          axis: { range: [null, 9, 1], tickwidth: 1, tickcolor: "darkblue" },
+          axis: { range: [null, 9], tickwidth: 1, tickcolor: "darkblue" },
           bar: { color: "mediumorchid" },
           bgcolor: "white",
           borderwidth: 2,
