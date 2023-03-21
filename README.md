@@ -4,7 +4,6 @@ This is my Module 14 Challenge for my Data Analytics and Visualization Boot Camp
 ## Table of Contents
 * [General Info](#general-information)
 * [Technologies Used](#technologies-used)
-* [Features](#features)
 * [Screenshots](#screenshots)
 * [Setup](#setup)
 * [Usage](#usage)
@@ -12,7 +11,6 @@ This is my Module 14 Challenge for my Data Analytics and Visualization Boot Camp
 * [Room for Improvement](#room-for-improvement)
 * [Acknowledgements](#acknowledgements)
 * [Contact](#contact)
-<!-- * [License](#license) -->
 
 
 ## General Information
@@ -28,8 +26,7 @@ Using D3 library, I read in the dataset from the url: https://2u-data-curriculum
 
 
 ## Screenshots
-![Example screenshot](./img/screenshot.png)
-<!-- If you have screenshots you'd like to share, include them here. -->
+![1](https://user-images.githubusercontent.com/117790100/226712315-1a6f9d76-28f2-4d4c-990a-1ed42c4c7c4d.png)
 
 
 ## Setup
@@ -225,7 +222,14 @@ function buildCharts(sampleValues) {
 
 
 ## Project Status
-Project is complete and no longer being worked on.
+Project is currently not being worked on.
+
+
+## Room for Improvement
+The gauge chart can be updated with more detailed features.
+
+Room for improvement:
+- Gauge Chart to reflect ranges and needle as indicator.
 
 
 ## Acknowledgements
