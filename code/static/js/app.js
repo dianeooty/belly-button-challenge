@@ -154,14 +154,21 @@ function buildCharts(sampleValues) {
         type: "indicator",
         mode: "gauge+number",
         gauge: {
-          axis: { range: [null, 9], tickwidth: 1, tickcolor: "darkblue" },
-          bar: { color: "mediumorchid" },
+          axis: { range: [null, 9], tickwidth: 0, tickcolor: "white" },
+          bar: { color: "#006837" },
           bgcolor: "white",
           borderwidth: 2,
-          bordercolor: "gray",
+          bordercolor: "white",
           steps: [
-            { range: [0, 2], color: "white" },
-            { range: [2, 4], color: "white" },
+            { range: [0, 1], color: "white" },
+            { range: [1, 2], color: "#ffffbf" },
+            { range: [2, 3], color: "#edf8b1" },
+            { range: [3, 4], color: "#b2df8a" },
+            { range: [4, 5], color: "#a6d96a" },
+            { range: [5, 6], color: "#a1d76a" },
+            { range: [6, 7], color: "#91cf60" },
+            { range: [7, 8], color: "#7fbc41" },
+            { range: [8, 9], color: "#4d9221" },
           ],
         }
       }
