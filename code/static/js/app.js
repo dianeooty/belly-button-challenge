@@ -145,22 +145,23 @@ function buildCharts(sampleValues) {
     // Plot bubble chart with bubbleData and bubbleLayout
     Plotly.newPlot("bubble", bubbleData, bubbleLayout);
 
+
     let gaugeData = [
       {
         domain: { x: [0, 1], y: [0, 1] },
         value: result2.wfreq,
-        title: { text: "Frequency" },
+        title: { text: "Wash Frequency" },
         type: "indicator",
         mode: "gauge+number",
         gauge: {
           axis: { range: [null, 9], tickwidth: 1, tickcolor: "darkblue" },
-          bar: { color: "darkblue" },
+          bar: { color: "mediumorchid" },
           bgcolor: "white",
           borderwidth: 2,
           bordercolor: "gray",
           steps: [
             { range: [0, 2], color: "white" },
-            { range: [2, 4], color: "white" }
+            { range: [2, 4], color: "white" },
           ],
         }
       }
