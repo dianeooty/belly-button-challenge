@@ -150,11 +150,11 @@ function buildCharts(sampleValues) {
       {
         domain: { x: [0, 1], y: [0, 1] },
         value: result2.wfreq,
-        title: { text: "Wash Frequency" },
+        title: { text: "<br><b>Belly Button Washing Frequency</b></br><br>Scrubs per Week" },
         type: "indicator",
         mode: "gauge+number",
         gauge: {
-          axis: { range: [null, 9], tickwidth: 1, tickcolor: "darkblue" },
+          axis: { range: [null, 9, 1], tickwidth: 1, tickcolor: "darkblue" },
           bar: { color: "mediumorchid" },
           bgcolor: "white",
           borderwidth: 2,
