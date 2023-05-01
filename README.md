@@ -1,5 +1,5 @@
-# belly-button-challenge
-This is my Module 14 Challenge for my Data Analytics and Visualization Boot Camp.  The goal is to create an interactive dashboard that explores the Belly Button Biodiversity dataset.
+# belly-button-diversity-analysis
+The goal is to create an interactive dashboard that explores the Belly Button Biodiversity dataset.
 
 ## Table of Contents
 * [General Info](#general-information)
